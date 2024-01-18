@@ -6,7 +6,7 @@ import AuthButtonClient from './auth-button-client'
 type Props = {}
 
 const AuthButtonServer = async (props: Props) => {
-    const supabase = createServerComponentClient({ cookies })
+    const supabase = createServerComponentClient<Database>({ cookies })
     const {
         data: {  session },
     } = await supabase.auth.getSession()

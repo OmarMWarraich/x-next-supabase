@@ -7,7 +7,7 @@ import React from 'react'
 type Props = {}
 
 const Login = async (props: Props) => {
-    const supabase = createServerComponentClient({ cookies })
+    const supabase = createServerComponentClient<Database>({ cookies })
 
     const { data: { session } } = await supabase.auth.getSession()
 

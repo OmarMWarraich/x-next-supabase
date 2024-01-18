@@ -6,7 +6,7 @@ import { Session, createClientComponentClient } from '@supabase/auth-helpers-nex
 import { useRouter } from 'next/navigation'
 
 const AuthButtonClient = ({ session }: { session:  Session | null }) => {
-    const supabase = createClientComponentClient()
+    const supabase = createClientComponentClient<Database>()
     const router = useRouter()
 
     const handleSignIn = async () => {
